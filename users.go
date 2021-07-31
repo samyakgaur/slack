@@ -296,7 +296,7 @@ func GetUsersOptionPresence(n bool) GetUsersOption {
 func newUserPagination(c *Client, options ...GetUsersOption) (up UserPagination) {
 	up = UserPagination{
 		c:     c,
-		limit: 200, // per slack api documentation.
+		limit: 200,
 	}
 
 	for _, opt := range options {
