@@ -3,6 +3,7 @@ package slack
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"net/url"
 	"strconv"
 	"strings"
@@ -372,6 +373,7 @@ func (api *Client) GetUsers() ([]User, error) {
 func (api *Client) GetUsersContext(ctx context.Context) (results []User, err error) {
 	p := api.GetUsersPaginated()
 	for err == nil {
+		fmt.Println("-----------------> executing functiom")
 		p, err = p.Next(ctx)
 		if err == nil {
 			results = append(results, p.Users...)
